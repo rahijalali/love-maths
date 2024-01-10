@@ -74,8 +74,6 @@ function calculateCorrectAnswer() {
     return [operand1 * operand2, "multiply"];
   } else if (operator === "-") {
     return [operand1 - operand2, "subtract"];
-  } else if (operator === "/") {
-    return [operand1 / operand2, "division"];
   } else {
     alert(`Unimplemented operator ${operator}`);
     throw `Unimplemented operator ${operator}. Aborting!`;
@@ -103,6 +101,11 @@ function displayAdditionQuestion(operand1, operand2) {
   document.getElementById("operand2").textContent = operand2;
   document.getElementById("operator").textContent = "+";
 }
+
+/* which is bigger: operand1 or operand2?
+if operand1 is bigger, return that.
+if operand2 id bigger, (else part) return that instead. 
+condition?true part:false part; */
 
 function displaySubtractQuestion(operand1, operand2) {
   document.getElementById("operand1").textContent =
