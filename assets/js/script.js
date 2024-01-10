@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
+
   document
     .getElementById("answer-box")
     .addEventListener("keydown", function (event) {
@@ -21,6 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
         checkAnswer();
       }
     });
+
   runGame("addition");
 });
 
@@ -31,6 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
 function runGame(gameType) {
   document.getElementById("answer-box").value = "";
   document.getElementById("answer-box").focus();
+
   // Creates two random numbers between 1 and 25
   let num1 = Math.floor(Math.random() * 25) + 1;
   let num2 = Math.floor(Math.random() * 25) + 1;
@@ -39,6 +42,8 @@ function runGame(gameType) {
     displayAdditionQuestion(num1, num2);
   } else if (gameType === "multiply") {
     displayMultiplyQuestion(num1, num2);
+  } else if (gameType === "subtract") {
+    displaySubtractQuestion(num1, num2);
   } else {
     alert(`Unknown game type: ${gameType}`);
     throw `Unknown game type: ${gameType}. Aborting!`;
@@ -109,11 +114,6 @@ function displayAdditionQuestion(operand1, operand2) {
   document.getElementById("operand2").textContent = operand2;
   document.getElementById("operator").textContent = "+";
 }
-
-/* which is bigger: operand1 or operand2?
-if operand1 is bigger, return that.
-if operand2 id bigger, (else part) return that instead. 
-condition?true part:false part; */
 
 function displaySubtractQuestion(operand1, operand2) {
   document.getElementById("operand1").textContent =
